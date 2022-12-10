@@ -42,7 +42,6 @@ public class RequestManager {
         });
     }
 
-
     private interface CallFixture {
         @GET("match")
         retrofit2.Call<FixtureResponse> callFixture(
