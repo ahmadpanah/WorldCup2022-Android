@@ -2,7 +2,7 @@ package ir.shariaty.fifaworldcup2022.manager;
 
 import android.content.Context;
 
-import ir.shariaty.fifaworldcup2022.ResponseListner;
+import ir.shariaty.fifaworldcup2022.ResponseListener;
 import ir.shariaty.fifaworldcup2022.models.FixtureResponse;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -22,7 +22,7 @@ public class RequestManager {
         this.context = context;
     }
 
-    public void getFixture(ResponseListner listener) {
+    public void getFixture(ResponseListener listener) {
         CallFixture callFixture = retrofit.create(CallFixture.class);
         Call<FixtureResponse> call = callFixture.callFixture();
         call.enqueue(new Callback<FixtureResponse>() {
