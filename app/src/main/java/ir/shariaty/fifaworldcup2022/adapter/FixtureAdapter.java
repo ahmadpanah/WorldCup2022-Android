@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 import ir.shariaty.fifaworldcup2022.R;
@@ -36,8 +38,13 @@ public class FixtureAdapter extends RecyclerView.Adapter<FixtureViewHolder>{
     public void onBindViewHolder(@NonNull FixtureViewHolder holder, int position) {
         final FixtureData data = list.get(position);
 
+        Picasso.get().load(data.home_flag).into(holder.imageView_home);
+        Picasso.get().load(data.away_flag).into(holder.imageView_away);
         holder.text_view_home.setText(data.home_team_en);
         holder.text_view_away.setText(data.away_team_en);
+        holder.textView_match.setText(data.type);
+        holder.textView_time.setText(data.local_date);
+
 
     }
 

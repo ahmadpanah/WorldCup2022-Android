@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         manager = new RequestManager(this);
         /*TODO I'll Fix it Later*/
-        manager.getFixture();
+        manager.getFixture(listener);
         dialog.show();
     }
 
@@ -43,5 +43,5 @@ public class MainActivity extends AppCompatActivity {
             dialog.dismiss();
             Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
         }
-    }
+    };
 }

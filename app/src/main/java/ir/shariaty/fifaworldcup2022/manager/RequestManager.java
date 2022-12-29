@@ -10,6 +10,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
+import retrofit2.http.Headers;
 
 public class RequestManager {
     Context context;
@@ -44,7 +45,9 @@ public class RequestManager {
 
     private interface CallFixture {
         @GET("match")
-
+        @Headers(
+                "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzhiMmYyY2YyODA5NGFhM2FjMDRiM2YiLCJpYXQiOjE2NzIzMDE5MzcsImV4cCI6MTY3MjM4ODMzN30.vZq_pDEIkJ-iFz3ywVySD3HdzILwwTqB0bzO6-EQZ74"
+        )
         retrofit2.Call<FixtureResponse> callFixture(
 
         );
